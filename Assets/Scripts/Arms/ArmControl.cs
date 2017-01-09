@@ -39,19 +39,14 @@ public class ArmControl : MonoBehaviour {
             //hands moving toward this point
             Debug.DrawLine(this.transform.position, hit.point, Color.blue);
             //Debug.DrawRay(this.transform.position, (hit.point - this.transform.position).normalized, Color.red);
-            //Ray armLength = new Ray()
 
             Vector3 idealPoint = this.transform.parent.position + (localPoint - this.transform.position).normalized * moveDistance;
-            //Vector3 idealPoint = this.transform.position + (localPoint - this.transform.position).normalized * moveDistance;
             //Debug.Log(idealPoint);
             //Debug.Log(this.transform.position +", " + idealPoint);
             //Debug.DrawLine(this.transform.parent.position, idealPoint, Color.red);
             //Debug.DrawLine(this.transform.position, idealPoint, Color.red);
             this.transform.position = Vector3.MoveTowards(this.transform.position, idealPoint, armSpeed * Time.deltaTime);
             //Debug.Log(this.transform.position);
-            //this.transform.position = Vector3.MoveTowards(this.transform.position, hit.point, armSpeed * Time.deltaTime);
-
-
 
         }
 
